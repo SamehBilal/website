@@ -211,6 +211,20 @@ $.fn.dataTable.ext.search.push(
 
 $(document).ready(function() {
 
+    $('#details').summernote(
+        {
+            tabsize: 2,
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+            ]
+        }
+    );
+
     var events = $('#events');
 
     /* Datatable */

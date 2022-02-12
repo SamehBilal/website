@@ -30,7 +30,7 @@
 
     {{--<ul class="nav navbar-nav d-none d-sm-flex flex justify-content-start ml-8pt">
         <li class="nav-item">
-            <a href="index.html"
+            <a href="index.blade.php"
                class="nav-link">Home</a>
         </li>
         <li class="nav-item dropdown">
@@ -150,8 +150,8 @@
                         </span>
 
                         <small class="flex d-flex flex-column">
-                            <strong class="navbar-text-100">{{ __('dashboard.Orders') }}</strong>
-                            <span class="navbar-text-50">{{ \App\Models\Order::count() }}</span>
+                            <strong class="navbar-text-100">{{ __('dashboard.Subscribers') }}</strong>
+                            <span class="navbar-text-50">{{ \App\Models\Subscribe::count() }}</span>
                         </small>
                     </span>
     <span class="d-none d-md-flex align-items-center mr-16pt">
@@ -163,8 +163,8 @@
                         </span>
 
                         <small class="flex d-flex flex-column">
-                            <strong class="navbar-text-100">{{ __('dashboard.Customers') }}</strong>
-                            <span class="navbar-text-50">{{ \App\Models\Customer::count() }}</span>
+                            <strong class="navbar-text-100">{{ __('dashboard.Messages') }}</strong>
+                            <span class="navbar-text-50">{{ \App\Models\Message::count() }}</span>
                         </small>
                     </span>
 
@@ -194,7 +194,7 @@
         <!-- // END Notifications dropdown -->
 
         <!-- Notifications dropdown -->
-        @include('components.notifications')
+        @include('components.dashboard.notifications')
         <!-- // END Notifications dropdown -->
 
         <div class="nav-item dropdown">
@@ -211,10 +211,10 @@
 
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-header"><strong>{{ __('dashboard.Profile') }}</strong></div>
+                {{--<div class="dropdown-header"><strong>{{ __('dashboard.Profile') }}</strong></div>--}}
                 <a class="dropdown-item"
                    href="{{ route('dashboard.settings.profile') }}">{{ __('dashboard.Edit_Profile') }}</a>
-                {{--<a class="dropdown-item"
+               {{-- <a class="dropdown-item"
                    href="billing.html">Billing</a>
                 <a class="dropdown-item"
                    href="billing-history.html">Payments</a>--}}
