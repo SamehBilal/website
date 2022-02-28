@@ -27,7 +27,7 @@
         <div class="page-section">
             <div class="stories-cards mb-4">
                 @php $count = 1; @endphp
-                @foreach($posts as $post)
+                @forelse($posts as $post)
                     <div class="card stories-card">
                         <div class="stories-card__content d-flex align-items-center flex-wrap">
                             <div class="avatar avatar-lg mr-3">
@@ -59,7 +59,9 @@
                         </div>
                     </div>
                     @php $count++;@endphp
-                @endforeach
+                @empty
+                    <h4>There are no Posts yet. <small>(Try to add some)</small></h4>
+                @endforelse
             </div>
             <div class="card-body ">
                 <div class="d-flex flex-row align-items-center">

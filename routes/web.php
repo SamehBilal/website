@@ -23,6 +23,18 @@ Route::get('/', function () {
 Route::get('/',[\App\Http\Controllers\WebsiteController::class,'index'])->name('index');
 Route::get('/about-us',[\App\Http\Controllers\WebsiteController::class,'about'])->name('about');
 Route::get('/contact-us',[\App\Http\Controllers\WebsiteController::class,'contact'])->name('contact');
+Route::get('/blog',[\App\Http\Controllers\WebsiteController::class,'blog'])->name('blog');
+Route::get('/blog-single',[\App\Http\Controllers\WebsiteController::class,'blog_single'])->name('blog.single');
+Route::get('/citizenship-by-investment',[\App\Http\Controllers\WebsiteController::class,'citizenship'])->name('citizenship');
+Route::get('/citizenship-by-investment-single',[\App\Http\Controllers\WebsiteController::class,'citizenship_single'])->name('citizenship.single');
+Route::get('/residency-by-investment',[\App\Http\Controllers\WebsiteController::class,'residency'])->name('residency');
+Route::get('/residency-by-investment-single',[\App\Http\Controllers\WebsiteController::class,'residency_single'])->name('residency.single');
+Route::get('/passports',[\App\Http\Controllers\WebsiteController::class,'passports'])->name('passports');
+Route::get('/passports',[\App\Http\Controllers\WebsiteController::class,'passports'])->name('passports');
+Route::get('/passports',[\App\Http\Controllers\WebsiteController::class,'passports'])->name('passports');
+Route::get('/passport-guide',[\App\Http\Controllers\WebsiteController::class,'passport_index'])->name('passport.guide');
+Route::get('/visa-requirements',[\App\Http\Controllers\WebsiteController::class,'visa_requirements'])->name('visa.requirements');
+Route::get('/free-consultation',[\App\Http\Controllers\WebsiteController::class,'free_consultation'])->name('free.consultation');
 
 Route::get('/dashboard', function () {
     $posts          = Post::paginate(10);
