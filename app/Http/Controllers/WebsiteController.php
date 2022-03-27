@@ -11,6 +11,26 @@ class WebsiteController extends Controller
         return view('website.index');
     }
 
+    public function home1()
+    {
+        return view('website.home1');
+    }
+
+    public function home2()
+    {
+        return view('website.home2');
+    }
+
+    public function home3()
+    {
+        return view('website.home3');
+    }
+
+    public function home4()
+    {
+        return view('website.home4');
+    }
+
     public function about()
     {
         return view('website.about');

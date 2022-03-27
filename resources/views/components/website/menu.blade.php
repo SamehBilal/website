@@ -11,7 +11,7 @@
                     <a href="https://www.instagram.com/thegoldencitizen"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/company/the-golden-citizen/"><i class="fab fa-linkedin"></i></a>
                 </div><!-- /.topbar-one__social -->
-                <a href="{{ route('contact') }}" class="topbar-one__guide-btn">GET FREE CONSULTATION</a>
+                <a href="{{ route('free.consultation') }}" class="topbar-one__guide-btn">GET FREE CONSULTATION</a>
             </div><!-- /.topbar-one__right -->
         </div><!-- /.container-fluid -->
     </div><!-- /.topbar-one -->

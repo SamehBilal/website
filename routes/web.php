@@ -21,6 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('/',[\App\Http\Controllers\WebsiteController::class,'index'])->name('index');
+Route::get('/home1',[\App\Http\Controllers\WebsiteController::class,'home1'])->name('home1');
+Route::get('/home2',[\App\Http\Controllers\WebsiteController::class,'home2'])->name('home2');
+Route::get('/home3',[\App\Http\Controllers\WebsiteController::class,'home3'])->name('home3');
+Route::get('/home4',[\App\Http\Controllers\WebsiteController::class,'home4'])->name('home4');
 Route::get('/about-us',[\App\Http\Controllers\WebsiteController::class,'about'])->name('about');
 Route::get('/contact-us',[\App\Http\Controllers\WebsiteController::class,'contact'])->name('contact');
 Route::get('/blog',[\App\Http\Controllers\WebsiteController::class,'blog'])->name('blog');

@@ -68,7 +68,7 @@
         <div class="container">
             <h3>Work with our amazing representatives</h3>
             <div class="cta-one__button-block">
-                <a href="{{ route('contact') }}" class="thm-btn cta-one__btn">Get Free Consultation</a><!-- /.thm-btn cta-one__btn -->
+                <a href="{{ route('free.consultation') }}" class="thm-btn cta-one__btn">Get Free Consultation</a><!-- /.thm-btn cta-one__btn -->
             </div><!-- /.cta-one__button-block -->
         </div><!-- /.container -->
     </section><!-- /.cta-one -->

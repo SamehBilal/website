@@ -40,7 +40,7 @@
                                 <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                                 <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet.</li>
                             </ul><!-- /.list-unstyled -->
-                            <a href="{{ route('about') }}" class="thm-btn cta-two__btn">Get Free Consultation</a><!-- /.thm-btn -->
+                            <a href="{{ route('free.consultation') }}" class="thm-btn cta-two__btn">Get Free Consultation</a><!-- /.thm-btn -->
                         </div><!-- /.cta-two__content -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->

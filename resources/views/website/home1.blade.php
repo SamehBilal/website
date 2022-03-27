@@ -41,96 +41,133 @@
 </div><!-- /.preloader -->
 
 <div class="page-wrapper">
-
-    @yield('main')
-
-    <section class="mailchimp-one">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <h3>Get The Latest Updates <br>
-                        by Signing Up</h3>
-                </div><!-- /.col-lg-5 -->
-                <div class="col-lg-7">
-                    <form action="{{ route('dashboard.subscribers.store') }}" method="POST" accept-charset="utf-8" class="mailchimp-one__form " >
-                        @csrf
-                        <input type="email" placeholder="Email Address" id="newsletter" name="email">
-                        <button class="thm-btn mailchimp-one__btn" type="submit">Subscribe now</button>
-                    </form><!-- /.mailchimp-one__form -->
-                    <div class="mc-form__response">
-                        @error('email')
-                        <div class="invalid-feedback" role="alert">{{ $message }}</div>
-                        @enderror
-                    </div><!-- /.mc-form__response -->
-                </div><!-- /.col-lg-7 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.mailchimp-one -->
-
-    <footer class="site-footer">
-        <div class="site-footer__bg" style="background-image: url({{ asset('website/assets/images/backgrounds/footer-bg-1-1.png') }});"></div>
-        <!-- /.site-footer__bg -->
-        <div class="container">
-            <div class="row">
-                <div class="footer-widget__column footer-widget__about">
-                    <a href="{{ route('index') }}" class="footer-widget__logo"><img src="{{ asset('website/assets/images/Black on Transparent.png') }}" width="140" alt=""></a>
-                    <p>We offer an efficient service to process your application, giving it the attention it deserves to ensure it is given the best possibility of success, allowing you full security for your investment and a second passport for you and your family.</p>
-                    <a href="mailto:info@passportgates.com">info@passportgates.com</a> <br>
-                    <a href="tel:+971585009411">+971585009411</a>
-                </div><!-- /.footer-widget__column -->
-                <div class="footer-widget__column footer-widget__links">
-                    <h3 class="footer-widget__title">Company</h3><!-- /.footer-widget__title -->
-                    <ul class="footer-widget__links-list list-unstyled">
-                        <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="#">Community Blog</a></li>
-                        <li><a href="#">Required Documents</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                        <li><a href="#">Meet the Team</a></li>
-                    </ul><!-- /.footer-widget__links-list list-unstyled -->
-                </div><!-- /.footer-widget__column -->
-                <div class="footer-widget__column footer-widget__links">
-                    <h3 class="footer-widget__title">Links</h3><!-- /.footer-widget__title -->
-                    <ul class="footer-widget__links-list list-unstyled">
-                        <li><a href="#">Passport Guides</a></li>
-                        <li><a href="#">Programs</a></li>
-                        <li><a href="#">Citizenship</a></li>
-                        <li><a href="#">Residency</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                    </ul><!-- /.footer-widget__links-list list-unstyled -->
-                </div><!-- /.footer-widget__column -->
-                <div class="footer-widget__column footer-widget__gallery">
-                    <h3 class="footer-widget__title">Gallery</h3><!-- /.footer-widget__title -->
-                    <ul class="footer-widget__gallery-list list-unstyled">
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-1.jpg') }}" alt="">
-                            </a></li>
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-2.jpg') }}" alt="">
-                            </a></li>
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-3.jpg') }}" alt="">
-                            </a></li>
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-4.jpg') }}" alt="">
-                            </a></li>
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-5.jpg') }}" alt="">
-                            </a></li>
-                        <li><a href="#">
-                                <img src="{{ asset('website/assets/images/resources/footer-1-6.jpg') }}" alt="">
-                            </a></li>
-                    </ul><!-- /.footer-widget__links-list list-unstyled -->
-                </div><!-- /.footer-widget__column -->
-                <div class="footer-widget__column footer-widget__options">
-                    <h3 class="footer-widget__title">Options</h3><!-- /.footer-widget__title -->
-                    <select name="languages" id="languages-2" class="selectpicker">
+    <header class="main-nav__header-one ">
+        <nav class="header-navigation stricky">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="main-nav__logo-box">
+                    <a href="{{ route('index') }}" class="main-nav__logo">
+                        <img src="{{ asset('website/assets/images/Black on Transparent.png') }}" class="main-logo" width="140" alt="Awesome Image" />
+                    </a>
+                    <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
+                        <!-- /.smpl-icon-menu --></a>
+                </div><!-- /.logo-box -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="main-nav__main-navigation">
+                    <ul class=" main-nav__navigation-box">
+                        <li class="@yield('index')">
+                            <a href="{{ route('index') }}">Home</a>
+                        </li>
+                        <li class="@yield('about')">
+                            <a href="{{ route('about') }}">About Us</a>
+                        </li>
+                        <li class="dropdown @yield('programs')">
+                            <a href="#">Programs</a>
+                            <ul>
+                                <li><a href="{{ route('citizenship') }}">Citizenship By Investment</a></li>
+                                <li><a href="{{ route('residency') }}">Residency By Investment</a></li>
+                            </ul><!-- /.sub-menu -->
+                        </li>
+                        <li class="dropdown @yield('passport')">
+                            <a href="#">Passport Guide</a>
+                            <ul>
+                                <li><a href="{{ route('passport.guide') }}">Passport Guides</a></li>
+                                <li><a href="{{ route('visa.requirements') }}">Travel Visa Requirements</a></li>
+                                <li><a href="{{ route('passports') }}">Passports</a></li>
+                            </ul><!-- /.sub-menu -->
+                        </li>
+                        <li class="@yield('blog')">
+                            <a href="{{ route('blog') }}">Blog</a>
+                        </li>
+                        <li class="@yield('contact')">
+                            <a href="{{ route('contact') }}">Contact Us</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                <div class="main-nav__right">
+                    <a href="#" class="main-nav__search search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
+                    <a href="{{ route('login') }}" class="main-nav__login" title="Login/Register"><i class="tripo-icon-avatar"></i></a>
+                    <select name="languages" id="languages" class="selectpicker">
                         <option value="ENG">ENG</option>
                         <option value="AR">AR</option>
-                    </select><!-- /#languages-2 .selectpicker -->
-                </div><!-- /.footer-widget__column -->
+                    </select><!-- /#languages .selectpicker -->
+                </div><!-- /.main-nav__right -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    </header><!-- /.site-header -->
+
+    <section class="tour-search-one__home-four" style="background-image: url({{ asset('website/assets/images/shapes/banner-4-bg.png') }});">
+        <img src="{{ asset('website/assets/images/shapes/sun-1-1.png') }}" alt="" class="tour-search-one__home-four__sun">
+        <img src="{{ asset('website/assets/images/shapes/bird-1-1.png') }}" alt="" class="tour-search-one__home-four__bird-1">
+        <img src="{{ asset('website/assets/images/shapes/bird-1-2.png') }}" alt="" class="tour-search-one__home-four__bird-2">
+        <img src="{{ asset('website/assets/images/shapes/banner-4-shapes.png') }}" alt="" class="tour-search-one__home-four__moc">
+
+        <div class="container">
+
+            <div class="tour-search-one__home-four__floated-text">
+                Passport Gates
+            </div><!-- /.tour-search-one__home-four__floated-text -->
+
+            <div class="block-title">
+                <p>Get your Second Passport in 90 Days</p>
+                <h3>Starting From <br> $100,000</h3>
+            </div><!-- /.block-title -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <form class="tour-search-one" action="#">
+                        <div class="tour-search-one__inner">
+                            <div class="tour-search-one__inputs">
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="name">Name</label>
+                                        <input type="text" placeholder="Enter Name" name="name" id="name">
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="phone">Phone</label>
+                                        <input type="number" placeholder="Enter Phone" name="phone" id="phone">
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="email">Email</label>
+                                        <input type="email" placeholder="Enter Email" name="email" id="email">
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="nationality">Nationality</label>
+                                        <input type="text" placeholder="Nationality" name="nationality" id="nationality">
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="job">Job Title</label>
+                                        <input type="text" placeholder="Job Title" name="job" id="job">
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                                <div class="tour-search-one__col">
+                                    <div class="tour-search-one__input-box">
+                                        <label for="Available">To qualify you must have $100,000 Available ?</label>
+                                        <select class="selectpicker" id="Available">
+                                            <option value="Yes_Available">Yes Available</option>
+                                            <option value="Not_Available">Not Available (Sorry at the moment you don't qualify for the program )</option>
+                                        </select>
+                                    </div><!-- /.tour-search-one__input-box -->
+                                </div><!-- /.tour-search-one__col -->
+                            </div><!-- /.tour-search-one__inputs -->
+                            <div class="tour-search-one__btn-wrap">
+                                <button type="submit" class="thm-btn tour-search-one__btn">Submit now</button>
+                            </div><!-- /.tour-search-one__btn-wrap -->
+                        </div><!-- /.tour-search-one__inner -->
+                    </form><!-- /.tour-search-one -->
+                </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
+
         </div><!-- /.container -->
-    </footer><!-- /.site-footer -->
+    </section>
 
     <div class="site-footer__bottom">
         <div class="container">
@@ -142,7 +179,6 @@
             </div><!-- /.site-footer__social -->
         </div><!-- /.container -->
     </div><!-- /.site-footer__bottom -->
-
 </div><!-- /.page-wrapper -->
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -238,3 +274,4 @@
 </body>
 
 </html>
+

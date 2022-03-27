@@ -71,21 +71,11 @@
         </header><!-- /.site-header -->
     </div><!-- /.site-header__header-one site-header__home-two-wrap -->
 
-    <section class="banner-two">
-        <div class="banner-two__bg">
-            <div class="banner-two__bg-inner" data-options='{ "delay": 5000, "slides": [ { "src": "{{ asset('website/assets/images/backgrounds/travel-2021-08-29-14-39-54-utc.jpg') }}" }, { "src": "{{ asset('website/assets/images/backgrounds/1519801807380.jfif') }}" }, { "src": "{{ asset('website/assets/images/backgrounds/travel editor favorite products.jpg') }}" } ], "transition": "fade", "timer": false }'></div><!-- /.banner-two__bg-inner -->
-        </div><!-- /.banner-two__bg -->
-<!--            <img src="{{ asset('website/assets/images/shapes/banner-two__flotated-text.png') }}" alt="" class="banner-two__floated-text">-->
+    <section class="banner-one" style="background-image: url({{ asset('website/assets/images/backgrounds/cta-4-bg.jpg') }});">
         <div class="container">
-            <p>Passport Gates</p>
-            <h2>Trusted Bath</h2>
-        </div><!-- /.container -->
-    </section><!-- /.banner-two -->
-
-
-    <section class="tour-search-one__home-two">
-        <div class="container">
-            <form class="tour-search-one wow fadeIn" action="#" data-wow-duration="1500ms">
+            <h2>Get your Second  <span>Passport</span></h2>
+            <p>in 90 Days Starting From $100,000</p>
+            <form class="tour-search-one" action="#">
                 <div class="tour-search-one__inner">
                     <div class="tour-search-one__inputs">
                         <div class="tour-search-one__input-box">
@@ -117,12 +107,13 @@
                         </div><!-- /.tour-search-one__input-box -->
                     </div><!-- /.tour-search-one__inputs -->
                     <div class="tour-search-one__btn-wrap">
+                        {{--<button type="submit" class="thm-btn tour-search-one__btn">Find now</button>--}}
                         <button type="submit" class="thm-btn tour-search-one__btn btn_black" style="background: #D0BB6F">GET FREE CONSULTATION</button>
                     </div><!-- /.tour-search-one__btn-wrap -->
                 </div><!-- /.tour-search-one__inner -->
             </form><!-- /.tour-search-one -->
         </div><!-- /.container -->
-    </section>
+    </section><!-- /.banner-one -->
 
     <section class="section-style3">
         <div class="promotion clearfix" style="background: url('{{ asset('website/assets/images/promo0.png') }}') no-repeat 0px 67px">
@@ -470,7 +461,7 @@
         </div><!-- /.container -->
     </section><!-- /.testimonials-one -->
 
-    <section class="cta-four" style="background-image: url({{ asset('website/assets/images/backgrounds/cta-4-bg.jpg') }});">
+    <section class="cta-four" style="background-image: url({{ asset('website/assets/images/backgrounds/video-bg-1-1.jpg') }});">
         <div class="container">
             <p>Find next place to visit</p>
             <h3>Explore the <span>world</span></h3>
